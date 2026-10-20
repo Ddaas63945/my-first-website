@@ -1,44 +1,18 @@
 <!doctype html>
 <html lang="ru">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#090909">
-  <meta name="description" content="MAISON NOIR — избранная парфюмерия. Шесть знаковых ароматов, шесть способов оставить впечатление. Демонстрационная витрина.">
-  <title>MAISON NOIR — Искусство оставлять впечатление</title>
-  <link rel="stylesheet" href="./style.css">
-  <script src="./script.js" defer></script>
-</head>
-<body>
-  <a href="#collection" class="skip-link">Перейти к коллекции</a>
-  <header class="header">
-    <a class="wordmark" href="#home" aria-label="MAISON NOIR — на главную">MAISON <span>NOIR</span><small>ПАРФЮМЕРНЫЙ ДОМ</small></a>
-    <nav aria-label="Основная навигация"><a href="#collection">Коллекция</a><a href="#philosophy">Философия</a></nav>
-    <div class="header-actions"><button class="icon-button" id="account-button" aria-label="Личный кабинет"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg></button><button class="bag-button" id="cart-button" aria-label="Открыть корзину"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 8h14l1 13H4L5 8Z"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg><span class="bag-label">Корзина</span><span id="cart-count">0</span></button></div>
-  </header>
-
-  <main>
-    <section class="hero" id="home" aria-labelledby="hero-title">
-      <div class="hero-halo" aria-hidden="true"></div>
-      <div class="hero-copy"><p class="eyebrow">ИЗБРАННАЯ ПАРФЮМЕРИЯ · MAISON NOIR</p><h1 id="hero-title">Искусство оставлять<br><span>впечатление.</span></h1><p class="hero-description">Некоторые моменты невозможно забыть.<br>Некоторые ароматы — тоже.</p></div>
-      <div class="hero-object" id="hero-object"><div class="hero-rule" aria-hidden="true"></div><div class="hero-product" id="hero-product"></div><div class="surface-shadow" aria-hidden="true"></div><div class="hero-caption"><span>01 / 06</span><div><p>TOM FORD</p><h2>Oud Wood</h2><small>ДРЕВЕСНЫЙ · ПРЯНЫЙ · ВНЕ ВРЕМЕНИ</small></div><button class="round-button" data-product="oud-wood" aria-label="Подробнее о Tom Ford Oud Wood">→</button></div></div>
-      <div class="hero-bottom"><span>ШЕСТЬ АРОМАТОВ. БЕСКОНЕЧНОСТЬ ВПЕЧАТЛЕНИЙ.</span><a href="#collection">Открыть коллекцию <span aria-hidden="true">↓</span></a></div>
-    </section>
-
-    <section class="collection section-wrap" id="collection" aria-labelledby="collection-title">
-      <div class="section-heading reveal"><div><p class="eyebrow">01 — КОЛЛЕКЦИЯ</p><h2 id="collection-title">Не просто аромат.<br><span>Ваше присутствие.</span></h2></div><p class="section-description">Шесть узнаваемых композиций.<br>Каждая — отдельная история.</p></div>
-      <div class="catalog-toolbar"><p><span id="result-count">6</span> ароматов <span class="muted">/ избранная коллекция</span></p><label class="brand-select">Бренд <select id="brand-filter" aria-label="Фильтр по бренду"><option value="all">Все бренды</option></select></label></div>
-      <div class="product-grid" id="product-grid"></div>
-      <p class="catalog-note">Демонстрационная витрина. Все цены указаны в PLN и не являются офертой. Фотографии, для которых нет подтверждённых прав использования, обозначены как недоступные.</p>
-    </section>
-
-    <section class="philosophy section-wrap" id="philosophy" aria-labelledby="philosophy-title"><div class="philosophy-light" aria-hidden="true"></div><p class="eyebrow reveal">02 — ФИЛОСОФИЯ MAISON NOIR</p><h2 class="reveal" id="philosophy-title">Тихая роскошь.<br><span>Громкое впечатление.</span></h2><p class="philosophy-text reveal">Аромат не нуждается в объяснениях. Он остаётся в воздухе, в памяти, в деталях. Мы собрали композиции с характером — чтобы вы нашли ту, которая говорит за вас.</p><div class="principles reveal"><div><span>01</span><h3>Характер</h3><p>От глубокого уда до прозрачного шафрана. Композиции со своим почерком.</p></div><div><span>02</span><h3>Детали</h3><p>Пирамида нот, концентрация и объём — всё, что поможет сделать выбор.</p></div><div><span>03</span><h3>Личный выбор</h3><p>Сохраняйте избранное и возвращайтесь к ароматам, которые вам близки.</p></div></div><a href="#collection" class="text-link">Найти свой аромат <span aria-hidden="true">→</span></a></section>
-  </main>
-
-  <footer class="footer section-wrap"><div class="footer-top"><a href="#home" class="wordmark">MAISON <span>NOIR</span></a><p>Впечатление начинается с вас.</p></div><div class="footer-bottom"><span>© <span id="year"></span> MAISON NOIR. Демонстрационный магазин.</span><div><button class="text-button" data-info="delivery">Доставка и оплата</button><button class="text-button" data-info="privacy">Локальные данные</button><a href="#home">Наверх ↑</a></div></div></footer>
-
-  <dialog class="product-dialog" id="product-dialog" aria-labelledby="detail-title"><div class="product-modal"><button class="close-button" data-close="product" aria-label="Закрыть описание аромата">×</button><div class="detail-stage" id="detail-stage"></div><div class="detail-panel" id="detail-panel"></div></div></dialog>
-  <dialog class="drawer-dialog" id="drawer-dialog" aria-labelledby="drawer-title"><section class="drawer"><div class="drawer-heading"><h2 id="drawer-title"></h2><button class="close-button" data-close="drawer" aria-label="Закрыть панель">×</button></div><div id="drawer-content"></div></section></dialog>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#050505" />
+    <meta
+      name="description"
+      content="NEXUS PARFUM — искусство аромата в новом измерении. Пространственный бутик избранной парфюмерии. Демонстрационный магазин."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>NEXUS PARFUM — Новое измерение аромата</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
