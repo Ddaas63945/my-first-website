@@ -1,8 +1,8 @@
 # Публикация сайта
 
-Сайт полностью статический: `index.html` содержит HTML, CSS и JavaScript. Сборка, установка пакетов и секреты не нужны. Внешние шрифты и библиотеки не используются.
+Сайт полностью статический: `index.html`, `style.css` и `script.js` содержат HTML, CSS и JavaScript. Сборка, установка пакетов и секреты не нужны. Внешние шрифты и библиотеки не используются.
 
-1. Сохраните `index.html` в ветке `main` репозитория `Ddaas63945/my-first-website` и отправьте изменения на GitHub (commit и push).
+1. Сохраните `index.html`, `style.css`, `script.js`, `.nojekyll` и папку `assets` в ветке `main` репозитория `Ddaas63945/my-first-website` и отправьте изменения на GitHub (commit и push).
 2. На GitHub откройте **Settings → Pages**.
 3. В **Build and deployment → Source** выберите **Deploy from a branch**.
 4. Выберите ветку **main**, каталог **/ (root)** и нажмите **Save**.
