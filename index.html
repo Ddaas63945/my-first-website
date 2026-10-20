@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080b12">
+<meta name="description" content="NEON — пространство для идей, которые светятся. Интерактивный неоновый сайт.">
+<title>NEON — включи свою идею</title>
+<style>
+:root{color-scheme:dark;--bg:#080b12;--text:#edf4ff;--muted:#929bae;--accent:#a6ffcb;--purple:#a88bff}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{margin:0;background:radial-gradient(ellipse at 85% 15%,#46216755,transparent 45%),radial-gradient(ellipse at 5% 65%,#12645325,transparent 40%),var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 75% 25%,#6a42b214,transparent 50%);z-index:-1}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:6px}
+header{max-width:1240px;margin:auto;padding:30px 40px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff10}
+.logo{font-weight:900;letter-spacing:4px;font-size:23px}
+.logo span{color:var(--accent)}
+nav{display:flex;gap:30px;color:var(--muted);font-size:14px}
+nav a:hover{color:var(--accent)}
+.tag{border:1px solid #a6ffcb40;border-radius:30px;padding:9px 15px;font-size:11px;letter-spacing:1px;color:var(--accent)}
+main{max-width:1240px;margin:auto;padding:0 40px}
+.hero{min-width:0;min-height:690px;display:grid;grid-template-columns:1.15fr 1fr;align-items:center;gap:30px}
+.eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:10px}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px var(--accent)}
+h1{overflow-wrap:anywhere;font-size:clamp(52px,6.5vw,88px);line-height:1.02;letter-spacing:-5px;margin:30px 0 25px;font-weight:800}
+h1 em{font-style:normal;color:var(--accent);background:linear-gradient(110deg,var(--accent),#a88bff);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 50px #a6ffcb24}
+.intro{color:var(--muted);font-size:17px;line-height:1.8;max-width:390px}
+.actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:35px}
+.btn{border:1px solid #ffffff25;border-radius:8px;background:transparent;color:var(--text);padding:16px 23px;cursor:pointer;display:inline-flex;align-items:center;gap:24px;transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 0 25px #a6ffcb25;border-color:var(--accent)}
+.btn.primary{background:linear-gradient(120deg,var(--accent),#b6b0ff);border-color:var(--accent);color:#0a1711;font-weight:700;box-shadow:0 0 25px #a6ffcb16}
+.note{font-size:11px;color:#647085;margin-top:24px;letter-spacing:.5px}
+.scene{overflow:hidden;height:480px;position:relative;display:grid;place-items:center;isolation:isolate}
+.scene:before{content:"";position:absolute;width:260px;height:260px;background:#8c52ff30;filter:blur(70px);border-radius:50%}
+.orb{width:295px;height:295px;border-radius:50%;position:relative;background:radial-gradient(circle at 32% 27%,#d3ffeb26,transparent 40%),radial-gradient(circle at 65% 70%,#54329980,#0b101c 70%);border:1px solid #bfffdc60;box-shadow:inset 5px 0 30px #a6ffcb28,inset -10px -5px 40px #a88bff28,0 0 50px #a88bff15;animation:float 7s ease-in-out infinite}
+.orb:before,.orb:after{content:"";position:absolute;inset:-36px;border:1px solid #a6ffcb90;border-radius:50%;transform:rotate(-32deg) scaleY(.38);box-shadow:0 0 13px #a6ffcb30}
+.orb:after{inset:-65px;transform:rotate(47deg) scaleY(.48);border-color:#a88bff70;box-shadow:0 0 20px #a88bff20}
+.orb-grid{position:absolute;inset:15px;border-radius:50%;background:repeating-linear-gradient(0deg,transparent 0 26px,#a6ffcb13 27px 28px);transform:rotate(-25deg);overflow:hidden}
+.star{position:absolute;color:var(--accent);font-size:23px;animation:twinkle 3s infinite alternate}
+.star.a{top:70px;right:60px}
+.star.b{bottom:80px;left:30px;animation-delay:1s}
+.scene-label{position:absolute;bottom:22px;right:20px;font:10px monospace;color:var(--muted);letter-spacing:2px}
+.coordinates{position:absolute;top:30px;left:5px;font:10px monospace;color:#687287;line-height:1.8}
+.strip{display:flex;justify-content:space-between;gap:20px;border-top:1px solid #ffffff15;border-bottom:1px solid #ffffff15;padding:24px 0;color:#8a94a6;font:11px monospace;letter-spacing:1px}
+.strip span:before{content:"✦";color:var(--accent);margin-right:12px}
+section.features{padding:95px 0}
+.section-top{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:35px}
+h2{font-size:clamp(30px,4vw,45px);letter-spacing:-1.5px;margin:15px 0 0}
+.section-top p{color:var(--muted);max-width:260px;line-height:1.7;font-size:14px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:linear-gradient(135deg,#ffffff12,#ffffff04);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:inset 0 1px 0 #ffffff15,0 16px 45px #00000025;border:1px solid #ffffff24;border-radius:14px;padding:30px;transition:border-color .25s,transform .25s}
+.card:hover{border-color:#a6ffcb60;transform:translateY(-5px)}
+.icon{width:44px;height:44px;display:grid;place-items:center;background:#a6ffcb0c;border:1px solid #a6ffcb25;color:var(--accent);border-radius:10px;font-size:24px}
+.card h3{font-size:19px;margin-top:28px}
+.card p{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:0}
+.lab{padding:50px;border-radius:18px;border:1px solid #a88bff35;background:radial-gradient(ellipse at right,#a88bff12,transparent 65%);display:flex;align-items:center;justify-content:space-between;gap:35px;margin-bottom:80px}
+.lab p{color:var(--muted);line-height:1.7}
+.lab .btn{white-space:nowrap}
+footer{max-width:1160px;margin:auto;border-top:1px solid #ffffff15;padding:27px 0 35px;display:flex;justify-content:space-between;gap:20px;color:#758095;font-size:12px}
+.status{color:var(--accent)}
+.reveal{animation:enter .9s ease both}
+.delay{animation-delay:.15s}
+#announcement{min-height:20px;color:var(--accent);font-size:13px;margin-top:15px}
+@keyframes float{50%{transform:translateY(-18px) rotate(6deg)}
+}
+@keyframes twinkle{to{opacity:.3;transform:scale(.7)}
+}
+@keyframes enter{from{opacity:0;transform:translateY(20px)}
+to{opacity:1;transform:translateY(0)}
+}
+@media(max-width:800px){header{padding:24px}
+.tag{display:none}
+nav{gap:20px}
+main{padding:0 24px}
+.hero{grid-template-columns:1fr;padding-top:60px;gap:0}
+.hero h1{font-size:clamp(42px,10vw,70px);letter-spacing:-3px}
+.scene{overflow:hidden;height:400px}
+.orb{width:240px;height:240px}
+.strip{flex-wrap:wrap;font-size:10px}
+.cards{grid-template-columns:1fr}
+.section-top{display:block}
+.section-top p{max-width:100%}
+.lab{padding:28px;display:block}
+.lab .btn{margin-top:15px}
+footer{margin:0 24px;flex-wrap:wrap}
+section.features{padding:65px 0}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+
+</style>
+</head>
+<body>
+<header><a class="logo" href="#home" aria-label="NEON — на главную">NEON<span>•</span></a><nav aria-label="Основная навигация"><a href="#possibilities">Возможности</a><a href="#lab">Лаборатория →</a></nav><span class="tag">СОЗДАНО ДЛЯ БУДУЩЕГО</span></header>
+<main id="home">
+<div class="hero"><div class="reveal"><div class="eyebrow"><span class="dot"></span>Твоя новая точка старта</div><h1>Идеи.<br>Энергия.<br><em>Твой импульс.</em></h1><p class="intro">Большие перемены начинаются с маленькой искры. Создавай, экспериментируй и выходи за рамки привычного.</p><div class="actions"><a class="btn primary" href="#lab">Поймать импульс <span>→</span></a><a class="btn" href="#possibilities">Исследовать <span>↓</span></a></div><p class="note">ЧИСТЫЙ КОД. БЕСКОНЕЧНЫЕ ВОЗМОЖНОСТИ.</p></div><div class="scene reveal delay" aria-hidden="true"><div class="coordinates">SYS.001 / ONLINE<br>EXPLORING THE UNKNOWN</div><div class="orb"><div class="orb-grid"></div></div><span class="star a">✦</span><span class="star b">+</span><span class="scene-label">[ ЭНЕРГИЯ В ДВИЖЕНИИ ]</span></div></div>
+<div class="strip"><span>БЕЗ ГРАНИЦ</span><span>НА ЛЮБОМ ЭКРАНЕ</span><span>В ТВОЁМ РИТМЕ</span><span>100% ВДОХНОВЕНИЯ</span></div>
+<section class="features" id="possibilities"><div class="section-top"><div><div class="eyebrow">01 / Возможности</div><h2>Меньше рамок.<br>Больше пространства.</h2></div><p>Всё, что нужно, чтобы сделать первый шаг к чему-то необычному.</p></div><div class="cards"><article class="card"><div class="icon" aria-hidden="true">→</div><h3>Заряжайся идеями</h3><p>Новый взгляд на привычные вещи. Здесь любопытство превращается в движущую силу.</p></article><article class="card"><div class="icon" aria-hidden="true">⌘</div><h3>Создавай своё</h3><p>Никаких сложных инструментов. Только идея, немного смелости и пространство для экспериментов.</p></article><article class="card"><div class="icon" aria-hidden="true">✧</div><h3>Будь заметнее</h3><p>Яркие детали, плавное движение и характер, который невозможно перепутать.</p></article></div></section>
+<section class="lab" id="lab"><div><div class="eyebrow">02 / Лаборатория света</div><h2>Какого цвета твой импульс?</h2><p>Нажми на кнопку. Измени настроение этого пространства.</p><div id="announcement" role="status" aria-live="polite">Сейчас: мятная энергия</div></div><button class="btn primary" id="change-color" type="button">Сменить импульс <span aria-hidden="true">✦</span></button></section>
+</main><footer><span class="logo" style="font-size:15px">NEON<span>•</span></span><span>Сделано с любопытством. <span id="year"></span></span><span class="status">● Все идеи в сети</span></footer>
+<script>
+'use strict';
+const themes = [
+  {color:'#a6ffcb',name:'мятная энергия'}
+,
+  {color:'#c6a4ff',name:'фиолетовый космос'}
+,
+  {color:'#8de5ff',name:'ледяной рассвет'}
+,
+  {color:'#ffc18d',name:'солнечный импульс'}
+
+];
+let currentTheme = 0;
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('change-color').addEventListener('click', () => {
+  currentTheme = (currentTheme + 1) % themes.length;
+  const theme = themes[currentTheme];
+  document.documentElement.style.setProperty('--accent', theme.color);
+  document.getElementById('announcement').textContent = 'Сейчас: ' + theme.name;
+}
+);
+</script>
+</body>
+</html>
